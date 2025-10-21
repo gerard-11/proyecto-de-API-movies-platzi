@@ -1,0 +1,24 @@
+{
+  "name": "proyecto-de-api-movies-platzi",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [
+    "API",
+    "javascript"
+  ],
+  "homepage": "https://github.com/gerard-11/proyecto-de-API-movies-platzi#readme",
+  "bugs": {
+    "url": "https://github.com/gerard-11/proyecto-de-API-movies-platzi/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gerard-11/proyecto-de-API-movies-platzi.git"
+  },
+  "license": "ISC",
+  "author": "Gerardo Jesus Rito A <grrdrito@gmail.com>",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
