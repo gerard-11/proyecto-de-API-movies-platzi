@@ -13,7 +13,6 @@ const categoriesPreviewList=$('.categoriesPreview_list')
 const moviesDetailCategoriesList= $('#movieDetail .categories-list')
 const relatedMoviesContainer=$('.relatedMovies-scrollContainer')
 const movieDetailsContainer=$('.movieDetail-container')
-const moviesSection= $('.trendingPreview-container');
 
 //Elements
 const headerTitle = $('.header-title');
@@ -21,8 +20,9 @@ const arrowBtn = $('.header-arrow');
 const headerCategoryTitle = $('.header-title--categoryView');
 const searchFormInput = $('#searchForm');
 const searchFormBtn = $('#searchBtn');
-const trendingBtn = $('.trendingPreview-header .trendingPreview-btn');
+const trendingBtn = $(' .trendingPreview-btn');
 const movieDetailTitle = $('.movieDetail-title');
 const movieDetailDescription = $('.movieDetail-description');
 const movieDetailScore = $('.movieDetail-score');
 const categoryTitle = $('.categories-preview .categoriesPreview__title');
+const trendingPreviewHeader = $('.trendingPreview-header');

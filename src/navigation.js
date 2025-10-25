@@ -51,6 +51,8 @@ function homePage(){
     categoriesPreviewSection.classList.remove('inactive')
     genericSection.classList.add('inactive')
     arrowBtn.classList.add('inactive')
+    trendingPreviewHeader.classList.remove('inactive')
+    trendingBtn.classList.remove('inactive')
     getTrendingMoviesPreview()
     getCategoriesPreview()
 }
@@ -65,7 +67,7 @@ function categoriesPage(){
     categoriesPreviewSection.classList.add('inactive')
     genericSection.classList.remove('inactive')
     movieDetailSection.classList.add('inactive')
-
+    trendingPreviewHeader.classList.add('inactive')
     const [_,categoryData]= location.hash.split('=')
     const [categoryId, categoryName] = decodeURIComponent(categoryData).split('-').map(str => str.trim());
     headerCategoryTitle.innerHTML = categoryName;
@@ -87,6 +89,7 @@ function searchPage(){
     genericSection.classList.remove('inactive')
     movieDetailSection.classList.remove('inactive')
     movieDetailsContainer.classList.add('inactive')
+    trendingPreviewHeader.classList.add('inactive')
 
     const [_,searchQuery]= location.hash.split('=')
 
@@ -113,11 +116,12 @@ function trendsPage(){
     /*headerSection.style.background= ''*/
     arrowBtn.classList.remove('inactive')
     headerTitle.classList.remove('inactive')
-    headerCategoryTitle.classList.remove('inactive')
-    searchForm.classList.add('inactive')
+    headerCategoryTitle.classList.add('inactive')
+    searchForm.classList.remove('inactive')
     moviesDetailCategoriesList.classList.add('inactive')
     trendingPreviewSection.classList.add('inactive')
     categoriesPreviewSection.classList.add('inactive')
     genericSection.classList.remove('inactive')
-
+    trendingBtn.classList.add('inactive')
+    getTrendingMovies()
 }

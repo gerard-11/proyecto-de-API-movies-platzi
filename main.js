@@ -30,7 +30,7 @@ async function getTrendingMoviesPreview(){
     const {data}= await api(`trending/movie/day` );
     const movies= data.results;
 
-createMoviesContainer(movies,moviesSection);
+createMoviesContainer(movies,trendingPreviewSection);
 
 };
 
@@ -79,6 +79,14 @@ async function getMoviesBYSearch(query){
     const movies= data.results;
 console.log(movies);
     createMoviesContainer(movies,genericSection);
+};
+
+async function getTrendingMovies(){
+    const {data}= await api(`trending/movie/day` );
+    const movies= data.results;
+
+    createMoviesContainer(movies,genericSection);
+
 };
 
 
