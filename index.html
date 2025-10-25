@@ -2,32 +2,123 @@
     <html lang="es">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport"
-              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <script src="secrets.js"></script>
-        <script src="main.js"></script>
         <link rel="stylesheet" href="style.css">
         <title>The movies Ger</title>
     </head>
     <body>
-    <header class="header">
+    <header class="header-container">
+        <span class="header-arrow inactive">&lt;</span>
         <h1>The movies Ger</h1>
-        <input type="text" id="search" placeholder="Search movies">
-        <button onclick="search()">Search</button>
+        <h1 class=" header-title header-title--categoryView inactive"></h1>
+        <form id="searchForm" class="header-searchForm">
+            <label for="search" class="header-searchInput">
+            <input type="text" placeholder="Vengadores" id="search"/>
+            <button id="searchBtn">🔍</button>
+            </label>
+        </form>
     </header>
-    <h2 class="title-trending">Trending</h2>
-    <section class="movies">
 
+    <section id="trendingPreview" class="trendingPreview-container">
+        <div class="trendingPreview-header">
+            <h2 class="title-trending">Trending</h2>
+            <button class="trendingPreview-btn">Ver más</button>
+        </div>
+        <article class="trendingPreview-movieList">
+
+        </article>
     </section>
 
     <section class="categories-preview">
         <h2 class="categoriesPreview__title">Categorias</h2>
-        <article class="categoriesPreview_list">
+       <!-- <article class="categoriesPreview_list">
             <div class="category-container">
-                <h3 id="id28">Drama</h3>
-        </article>
+                <h3 id="id2">Drama</h3>
+        </article>-->
     </section>
 
+    <section id="genericList" class="genericList-container inactive">
+       <!-- <div class="movie-container">
+            <img
+                    src="https://image.tmdb.org/t/p/w300/adOzdWS35KAo21r9R4BuFCkLer6.jpg"
+                    class="movie-img"
+                    alt="Nombre de la película"
+            />
+        </div>
+
+        <div class="movie-container">
+            <img
+                    src="https://image.tmdb.org/t/p/w300/adOzdWS35KAo21r9R4BuFCkLer6.jpg"
+                    class="movie-img"
+                    alt="Nombre de la película"
+            />
+        </div>
+
+        <div class="movie-container">
+            <img
+                    src="https://image.tmdb.org/t/p/w300/adOzdWS35KAo21r9R4BuFCkLer6.jpg"
+                    class="movie-img"
+                    alt="Nombre de la película"
+            />
+        </div>-->
+    </section>
+
+    <section id="movieDetail" class="movieDetail-container inactive">
+        <h1 class="movieDetail-title">Deadpool</h1>
+        <span class="movieDetail-score">7.6</span>
+        <p class="movieDetail-description">
+            Wisecracking mercenary Deadpool battles the evil and powerful Cable and other bad guys to save a boy's life.
+        </p>
+
+        <article class="categories-list">
+            <!--<div class="category-container">
+                <h3 id="id28" class="category-title">Romance</h3>
+            </div>
+
+            <div class="category-container">
+                <h3 id="id16" class="category-title">Drama</h3>
+            </div>
+
+            <div class="category-container">
+                <h3 id="id14" class="category-title">Acción</h3>
+            </div>-->
+        </article>
+
+        <article class="relatedMovies-container">
+            <h2 class="relatedMovies-title">Películas similares</h2>
+
+            <!--<div class="relatedMovies-scrollContainer">-->
+                <!--<div class="movie-container">
+                    <img
+                            src="https://image.tmdb.org/t/p/w300/adOzdWS35KAo21r9R4BuFCkLer6.jpg"
+                            class="movie-img"
+                            alt="Nombre de la película"
+                    />
+                </div>
+
+                <div class="movie-container">
+                    <img
+                            src="https://image.tmdb.org/t/p/w300/adOzdWS35KAo21r9R4BuFCkLer6.jpg"
+                            class="movie-img"
+                            alt="Nombre de la película"
+                    />
+                </div>
+
+                <div class="movie-container">
+                    <img
+                            src="https://image.tmdb.org/t/p/w300/adOzdWS35KAo21r9R4BuFCkLer6.jpg"
+                            class="movie-img"
+                            alt="Nombre de la película"
+                    />
+                </div>
+            </div>-->
+        </article>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="secrets.js"></script>
+    <script src="./src/nodes.js"></script>
+    <script src="main.js"></script>
+    <script src=" ./src/navigation.js"></script>
     </body>
     </html>

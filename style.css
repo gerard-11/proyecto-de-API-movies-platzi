@@ -4,7 +4,7 @@
     padding: 0;
 }
 body{
-    background-image: url('img/5-peliculas-que-son-tendencia-en-netflix-para-ver-este-fin-de-semana.webp');
+   /* background-image: url('img/5-peliculas-que-son-tendencia-en-netflix-para-ver-este-fin-de-semana.webp');*/
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -29,6 +29,18 @@ header{
     gap: 1rem;
 
 }
+.header-arrow {
+    color: #c43086;
+    font-weight: 900  ;
+    font-size: 40px;
+    margin-bottom: 16px;
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-start;
+}
+.header-arrow--white {
+    color: #e3ba35;
+}
 header input{
     width: 40%;
     align-self: center;
@@ -50,38 +62,37 @@ header button{
     margin-top:2rem;
     font-size:2rem;
 }
-.movies{
+.trendingPreview-container{
     display: flex;
-    margin-top: 2rem;
     align-items: center;
     gap: 1rem;
     overflow-x: auto;
     scroll-behavior: smooth;
     height: 20rem;
+    margin-bottom: 4rem;
+    margin-top: 4rem;
 }
-.movies img{
+.trendingPreview-container img{
     border-radius:10px;
     flex-shrink: 0;
     margin: 0.5rem;
     height: 15rem;
     box-shadow: 5px 5px 10px black;
 }
-.categoriesPreview_list{
+.trendingPreview-btn{
+    background-color: #c43086;
+    width: 100%;
+    z-index: 999;
+}
+.categories-preview{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: .5rem;
+    grid-template-columns:  2fr 2fr;
+    gap:.5rem;
     justify-items: center;
     margin-bottom: 1rem;
 }
-.categories-preview .categoriesPreview__title{
-    text-align: center;
-    width: 100%;
-    padding: 1rem;
-    font-size: 2rem;
-    color: #ffffff;
-}
 .category-container{
-    background-color: #066ed8;
+    width: 50%;
     min-width: 120px;
     max-width: 25%;
     display: flex;
@@ -89,15 +100,21 @@ header button{
     padding: .5rem;
     margin-top: 1rem;
     box-shadow: 5px 5px 10px black;
-    color: white;
+    color: #111717;
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    background-color: rgba(164, 44, 38, 0.73);
+    cursor: pointer;
 }
 .category-container:before{
     content: "";
     display: inline-block;
     min-width: 12px;       /* ancho del cuadrado */
     min-height: 12px;      /* alto del cuadrado */
-    background-color: #8c12c5;
+    background-color: #e3ba35;
     margin-right: 8px; /* espacio entre el cuadrado y el texto */
     align-self: center;
+}
 
+.inactive {
+    display: none;
 }
