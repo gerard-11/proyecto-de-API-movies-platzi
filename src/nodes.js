@@ -11,6 +11,7 @@ const genericListContainer= $('.genericList-container')
 const searchForm=$('#searchForm input')
 const trendingMoviesPreviewList=$('.trendingPreview-movieList')
 const categoriesPreviewList=$('.categoriesPreview_list')
+const API_KEY='153587a950c5f38f93a625649efda506';
 const moviesDetailCategoriesList= $('#movieDetail .categories-list')
 const relatedMoviesScrollContainer=$('.relatedMovies-scrollContainer')
 const relatedMoviesContainer= $('.relatedMovies-container')

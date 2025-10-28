@@ -324,7 +324,7 @@ article .generic-list{
     .categories-list{
         flex-direction: row;
     }
-   
+
     .movie-img-detail{/**/
         width: 300px;/**/
         box-shadow: 5px 5px 10px black;
