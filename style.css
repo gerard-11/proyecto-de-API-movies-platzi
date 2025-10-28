@@ -347,7 +347,7 @@ article .generic-list{
 
 }
 
-@media(max-width:390px){
+@media(max-width:480px){
     body {
         overflow-x: hidden;
     }
