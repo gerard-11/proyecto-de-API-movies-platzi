@@ -98,13 +98,31 @@ async function getMovieById(id){
 
     const movieImg= ' https://image.tmdb.org/t/p/w500/' + movie.poster_path
 
-    headerSection.style.background= `
-    url(${movieImg})`
+    movieImgDetail.style.background= `
+    url(${movieImg}) `
+    /*movieImgDetail.style.backgroundSize = 'cover';
+    movieImgDetail.style.backgroundPosition = 'center';
+    movieImgDetail.style.backgroundRepeat = 'no-repeat';
+    movieImgDetail.style.borderRadius = '16px';
+    movieImgDetail.style.boxShadow = '0 8px 25px rgba(0,0,0,0.6)';
+    movieImgDetail.style.width = '500px';
+    movieImgDetail.style.margin = '15px auto 15px auto';*/
+
+
+
+    
     movieDetailTitle.textContent=movie.title
     movieDetailDescription.textContent=movie.overview
     movieDetailScore.textContent=movie.vote_average
 
     createCategories(movie.genres,moviesDetailCategoriesList)
+    getRelatedMoviesById(id)
+}
 
+async function getRelatedMoviesById(id){
+    const {data}= await api(`movie/${id}/similar` );
+    const relatedMovies=data.results;
+    console.log(relatedMovies);
+    createMoviesContainer(relatedMovies, relatedMoviesContainer)
 }
 

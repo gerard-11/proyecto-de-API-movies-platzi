@@ -1,27 +1,37 @@
+:root {
+    --color-bg: #0f172a;        /* Azul oscuro elegante */
+    --color-card: #1e293b;      /* Fondo de secciones */
+    --color-accent: #93c5fd;    /* Azul pastel */
+    --color-accent-light: #bfdbfe; /* Azul más suave para hover */
+    --color-text: #f8fafc;      /* Blanco suave */
+    --color-muted: #94a3b8;     /* Gris azulado */
+    --shadow-soft: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
 *{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
-body{
-   /* background-image: url('img/5-peliculas-que-son-tendencia-en-netflix-para-ver-este-fin-de-semana.webp');*/
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-}
-
 html{
     font-size: 62.5%;
 }
-h1{
+body{
+    font-family: Inter, system-ui, Arial;
+    background-color:var(--color-bg);
+    color: var(--color-text);
+}
+
+
+/*h1{
     margin-top: 1rem;
     margin-right: auto;
     font-size: 3rem;
     margin-bottom: 1rem;
-}
+}*/
 header{
     width:100%;
-    background-color: rgba(183, 183, 189, 0.23);
+    background-color: #111d40;
     padding: 2rem;
     display: inline-block;
     justify-content: center;
@@ -29,52 +39,86 @@ header{
     gap: 1rem;
 
 }
-/*.header-container--long {
-    background-image: url('https://pics.filmaffinity.com/Deadpool-777527803-large.jpg');
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.35) 19.27%, rgba(0, 0, 0, 0) 29.17%), url(https://pics.filmaffinity.com/Deadpool-777527803-large.jpg);
+.header-container--long {
+    background: linear-gradient(135deg, #1e293b, #0f172a);
     background-size: cover !important;
     height: 480px;
     position: fixed;
     top: 0;
     width: 100%;
-}*/
+    box-shadow: var(--shadow-soft);
+}
+.header-container h1 {
+    font-weight: 600;
+    color: var(--color-accent);
+    cursor: pointer;
+    font-size: 4rem;
+    width: 300px;
+    margin:0 auto 2.5rem auto;
+    border-radius: 10px;
+}
 .header-arrow {
-    color: #c43086;
+   /* color: #03124d;
     font-weight: 900  ;
     font-size: 40px;
-    margin-bottom: 16px;
+
     cursor: pointer;
     display: flex;
     justify-content: center;
+    text-align: center;
     position: fixed;
     background-color: white;
     width: 4rem;
-    border-radius: 40%;
+    border-radius: 40%;*/
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: rgba(147, 197, 253, 0.15); /* azul pastel translúcido */
+    color: var(--color-accent, #93c5fd);
+    font-size: 1.4rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(4px);
+    position: fixed;
+    left: 1rem;
+    top: 1rem;
+    z-index: 10;
 }
 .header-arrow--white {
     color: #e3ba35;
 }
-header input{
-    width: 40%;
-    align-self: center;
-    border-radius: 10px;
-    font-size: 1.5rem;
-    color: #000000;
-    height: 3rem;
+
+.header-title__page:hover {
+    box-shadow: 0 8px 30px rgba(147, 197, 253, 0.4);
 }
-header button{
-    background-color: rgba(0, 0, 0, 0.89);
-    color: #ffffff;
-    border-radius: 10px;
+.header-searchForm input {
+    border: none;
+    border-radius: 20px;
+    padding: 8px 14px;
+    outline: none;
+    background: var(--color-card);
+    color: var(--color-text);
+    width: 500px;
+}
+.header-searchForm button {
+    border: none;
+    background: var(--color-accent);
+    color: #0f172a;
+    border-radius: 30%;
+    padding: 6px 10px;
+    margin-left: 6px;
     cursor: pointer;
-    height: 3rem;
-    width: 7rem;
+    transition: background 0.3s ease;
 }
-.title-trending{
-    text-align: center;
-    margin-top:2rem;
-    font-size:2rem;
+
+.header-searchForm button:hover {
+    background: var(--color-accent-light);
 }
+
 .trendingPreview-container{
     display: flex;
     gap: 1rem;
@@ -84,6 +128,9 @@ header button{
     margin-bottom: 4rem;
     margin-top: 4rem;
 }
+.movieDetail-title{
+    margin-left:20px;
+}
 .trendingPreview-container img{
     border-radius:10px;
     flex-shrink: 0;
@@ -91,6 +138,9 @@ header button{
     box-shadow: 5px 5px 10px black;
     margin-bottom: 2rem;
     cursor: pointer;
+}
+.movie-img:hover {
+    box-shadow: 0 8px 30px rgba(147, 197, 253, 0.4);
 }
 
 .trendingPreview-header{
@@ -103,19 +153,32 @@ header button{
     gap: 2rem;
     box-shadow: 2px 2px 2px black;
 }
-.trendingPreview-btn{   /*aqui esta el contendero     ue no se ve*/
-    background-color: #bc6460;
-    justify-content: center;
-    height: 30%;
-    min-width:100px;
+.movie-container:hover {
+    transform: scale(1.05);
+}
+.trendingPreview-btn{
     margin:auto;
     align-items: center;
-    border-radius:10px;
     cursor: pointer;
+    background: var(--color-accent);
+    color: #0f172a;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 18px;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(147, 197, 253, 0.3);
+    transition: all 0.3s ease;
 }
+.trendingPreview-btn:hover {
+    background: var(--color-accent-light);
+    transform: translateY(-2px);
+}
+
 .title-trending{
-   margin:auto;
-    font-size:3rem;
+    margin:auto;
+    font-size: 3rem;
+    font-weight: 600;
+    color: var(--color-accent);
 }
 
 .categories-preview{
@@ -136,8 +199,12 @@ header button{
     box-shadow: 5px 5px 10px black;
     color: #111717;
     border: 1px solid rgba(0, 0, 0, 0.8);
-    background-color: rgba(164, 44, 38, 0.73);
+    background-color:  var(--color-accent);
     cursor: pointer;
+}
+.category-container:hover {
+    background: var(--color-accent-light);
+    transform: translateY(-2px);
 }
 .category-container:before{
     content: "";
@@ -160,15 +227,122 @@ header button{
     border-radius: 1rem;
     cursor: pointer;
     box-shadow: 2px 2px 2px black;
+
 }
 
 article .generic-list{
     background-color: white;
 }
-
+.relatedMovies-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 4rem;
+}
+.relatedMovies-container img{
+    width: 15rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    box-shadow: 2px 2px 2px black;
+}
 .inactive {
     display: none;
 }
-.active{
+
+/*vista de movies detail*/
+#movieDetail{
+    width: 100%;
+    margin: auto;
+}
+.movieDetail-container__page{
+    width: 100%;
+    height: 300px;
+    margin-top: 1rem;
+}
+
+.movieDetail-description{
+    font-size: 2rem;
+    margin-left: 20px;
+}
+ .categories-list{
     display: flex;
+    justify-content: center;
+     width: 100%;
+     gap: 1rem;
+     margin: 12px 10px 0 10px;
+}
+ .category-container{
+     width: 20%;
  }
+ .movieDetail-score{
+     font-size: 1.5rem;
+     margin-left: 20px;
+
+ }
+.movieDetail-score:before{
+    content: "⭐";
+    display: inline-block;
+    min-width: 12px;       /* ancho del cuadrado */
+    min-height: 12px;      /* alto del cuadrado */
+    margin-right: 8px; /* espacio entre el cuadrado y el texto */
+    align-self: center;
+}
+.movieDetail-container__page {
+   background: #c43086;
+    width: 40%;
+    margin:15px auto 15px auto;
+    border-radius: 15px;
+}
+.relatedMovies-title{
+    color: var(--color-accent);
+}
+
+@media(max-width:320px){
+    body {
+        overflow-x: hidden;
+    }
+    .header-container h1{
+        margin-left:-10px;
+    }
+    .header-searchForm input {
+        border: none;
+        border-radius: 20px;
+        padding: 8px 14px;
+        outline: none;
+        background: var(--color-card);
+        color: var(--color-text);
+        width: 150px;
+    }
+    .trendingPreview-container{
+    margin: 10px 5px
+}
+    #genericList .movie-img{
+        height: 15rem;
+        width: 10rem;
+    }
+    .categories-list{
+        flex-direction: row;
+    }
+   
+    .movie-img-detail{/**/
+        width: 300px;/**/
+        box-shadow: 5px 5px 10px black;
+    }
+    .categories-list {
+        flex-wrap: wrap;
+        height: 50px;
+        margin-top:5px;
+
+    }
+    .relatedMovies-container{
+       margin-top: 6rem;
+    }
+    .header-arrow{
+       top:5px;
+        border-radius: 3px;
+        height: 25px;
+        color:white;
+    }
+
+}
