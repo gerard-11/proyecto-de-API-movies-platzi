@@ -346,3 +346,52 @@ article .generic-list{
     }
 
 }
+
+@media(max-width:390px){
+    body {
+        overflow-x: hidden;
+    }
+    .header-container h1{
+        margin-left:-10px;
+    }
+    .header-searchForm input {
+        border: none;
+        border-radius: 20px;
+        padding: 8px 14px;
+        outline: none;
+        background: var(--color-card);
+        color: var(--color-text);
+        width: 150px;
+    }
+    .trendingPreview-container{
+        margin: 10px 5px
+    }
+    #genericList .movie-img{
+        height: 15rem;
+        width: 10rem;
+    }
+    .categories-list{
+        flex-direction: row;
+    }
+
+    .movie-img-detail{/**/
+        width: 300px;/**/
+        box-shadow: 5px 5px 10px black;
+    }
+    .categories-list {
+        flex-wrap: wrap;
+        height: 50px;
+        margin-top:5px;
+
+    }
+    .relatedMovies-container{
+        margin-top: 6rem;
+    }
+    .header-arrow{
+        top:5px;
+        border-radius: 3px;
+        height: 25px;
+        color:white;
+    }
+
+}
