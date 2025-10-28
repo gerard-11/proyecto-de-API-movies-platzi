@@ -14,7 +14,9 @@ function createMoviesContainer(movies, container){
     movies.forEach(movie => {
         const movieContainer= document.createElement('div');
         movieContainer.classList.add('movie-container')
-
+        movieContainer.addEventListener('click',()=>{
+           location.hash='movie=' + movie.id;
+       })
         const movieImg= document.createElement('img');
         movieImg.classList.add('movie-img');
         movieImg.setAttribute('alt', movie.title);
@@ -26,6 +28,27 @@ function createMoviesContainer(movies, container){
     })
 }
 
+function createCategories(categories, container){
+    container.innerHTML = '';
+
+    categories.forEach(category => {
+        const previewCategory= document.createElement('div');
+        previewCategory.classList.add('category-container');
+
+        const categoryTitle= document.createElement('h3');
+        categoryTitle.classList.add('category-title');
+        categoryTitle.setAttribute('id', 'id' + category.id);
+        previewCategory.addEventListener('click', ()=>{
+            location.hash = `#category=${category.id}-${category.name}`;
+        }); //aqui definimos la ubicacion del hash
+        const categoryTitleText=document.createTextNode(category.name)
+
+        categoryTitle.appendChild(categoryTitleText);
+        previewCategory.appendChild(categoryTitle);
+        container.appendChild(previewCategory);
+    })
+}
+
 async function getTrendingMoviesPreview(){
     const {data}= await api(`trending/movie/day` );
     const movies= data.results;
@@ -34,30 +57,12 @@ createMoviesContainer(movies,trendingPreviewSection);
 
 };
 
-
-async function getCategoriesPreview(){
+async function createCategoriesPreview(){
     const {data}= await api ('genre/movie/list' );
     const categories= data.genres;
-
-    categoriesPreviewSection.innerHTML = '';
-
-    categories.forEach(category => {
-    const previewCategory= document.createElement('div');
-    previewCategory.classList.add('category-container');
-
-    const categoryTitle= document.createElement('h3');
-    categoryTitle.classList.add('category-title');
-    categoryTitle.setAttribute('id', 'id' + category.id);
-    previewCategory.addEventListener('click', ()=>{
-        location.hash = `#category=${category.id}-${category.name}`;
-    }); //aqui definimos la ubicacion del hash
-    const categoryTitleText=document.createTextNode(category.name)
-
-        categoryTitle.appendChild(categoryTitleText);
-        previewCategory.appendChild(categoryTitle);
-        categoriesPreviewSection.appendChild(previewCategory);
-    })
+    createCategories(categories,categoriesPreviewSection );
 }
+
 
 async function getMoviesByCategories(id){
     const {data}= await api(`discover/movie`,{
@@ -86,7 +91,20 @@ async function getTrendingMovies(){
     const movies= data.results;
 
     createMoviesContainer(movies,genericSection);
-
 };
 
+async function getMovieById(id){
+    const {data:movie}= await api(`movie/` + id );
+
+    const movieImg= ' https://image.tmdb.org/t/p/w500/' + movie.poster_path
+
+    headerSection.style.background= `
+    url(${movieImg})`
+    movieDetailTitle.textContent=movie.title
+    movieDetailDescription.textContent=movie.overview
+    movieDetailScore.textContent=movie.vote_average
+
+    createCategories(movie.genres,moviesDetailCategoriesList)
+
+}
 

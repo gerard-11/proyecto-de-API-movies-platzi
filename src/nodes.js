@@ -5,6 +5,7 @@ const trendingPreviewSection= $('#trendingPreview')
 const categoriesPreviewSection= $('.categories-preview')
 const genericSection= $('#genericList')
 const movieDetailSection= $('#movieDetail')
+const genericListContainer= $('.genericList-container')
 
 //list and containers
 const searchForm=$('#searchForm input')
@@ -12,7 +13,8 @@ const trendingMoviesPreviewList=$('.trendingPreview-movieList')
 const categoriesPreviewList=$('.categoriesPreview_list')
 const moviesDetailCategoriesList= $('#movieDetail .categories-list')
 const relatedMoviesContainer=$('.relatedMovies-scrollContainer')
-const movieDetailsContainer=$('.movieDetail-container')
+
+
 
 //Elements
 const headerTitle = $('.header-title');
